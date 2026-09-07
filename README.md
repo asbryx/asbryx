@@ -5,7 +5,7 @@
   <br/><br/>
 
   <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=24&duration=2800&pause=1000&color=DBACAC&center=true&vCenter=true&multiline=false&width=550&height=50&lines=Welcome+to+asbryx's+workspace;On-Chain+Engineering+%26+Automation;High-Speed+Snipers+%7C+Bot+Architect;Cryptanalysis+%26+Tooling" alt="Typing SVG" />
+    <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=24&duration=2800&pause=1000&color=DBACAC&center=true&vCenter=true&multiline=false&width=550&height=50&lines=Welcome+to+asbryx's+workspace;On-Chain+Engineering+%26+Automation;High-Speed+Snipers+%7C+Bot+Architect;Crypto+Security+%26+Reverse+Engineering" alt="Typing SVG" />
   </a>
 
   <p align="center">
@@ -25,47 +25,33 @@
 ### Tech Stack & Tooling
 
 <div align="center">
-  <img src="https://skillicons.dev/icons?i=python,ts,js,rust,cpp,solidity,ethereum,bash,nodejs,git,regex,selenium,linux,windows,vscode,postman&perline=8" alt="Tech Stack" />
+  <img src="https://skillicons.dev/icons?i=python,ts,js,rust,cpp,solidity,docker,bash,nodejs,git,regex,selenium,linux,windows,vscode,postman&perline=8" alt="Tech Stack" />
 </div>
 
 ---
 
 ### Highlighted Repositories
 
-<table width="100%">
-  <tr>
-    <td width="50%" height="150" valign="top">
-      <a href="https://github.com/asbryx/polymarket-lol-bot"><strong>polymarket-lol-bot</strong></a>
-      <br/><br/>
-      High-performance Rust trading engine for Polymarket LoL Esports orderbook telemetry and automated dip-buying execution.
-      <br/><br/>
-      <code>Rust</code> <code>Polymarket</code> <code>Trading Bot</code>
-    </td>
-    <td width="50%" height="150" valign="top">
-      <a href="https://github.com/asbryx/octra-hfhe-v2-cryptanalysis"><strong>octra-hfhe-v2-cryptanalysis</strong></a>
-      <br/><br/>
-      Source-first cryptanalysis pipeline of OCTRA HFHE Challenge v2, including the live R1 LPN corpus reduction workflow.
-      <br/><br/>
-      <code>Python</code> <code>C++</code> <code>Cryptography</code>
-    </td>
-  </tr>
-  <tr>
-    <td width="50%" height="150" valign="top">
-      <a href="https://github.com/asbryx/arc-hive"><strong>arc-hive</strong></a>
-      <br/><br/>
-      Archive and structured resource management system designed for speed, modularity, and clean query schemas.
-      <br/><br/>
-      <code>TypeScript</code> <code>Fullstack</code> <code>Database</code>
-    </td>
-    <td width="50%" height="150" valign="top">
-      <a href="https://github.com/asbryx/vencord-KeywordNotify"><strong>vencord-KeywordNotify</strong></a>
-      <br/><br/>
-      Vencord client plugin providing low-overhead regex pattern matching and instant target keyword notifications.
-      <br/><br/>
-      <code>TypeScript</code> <code>Discord API</code> <code>Plugin</code>
-    </td>
-  </tr>
-</table>
+<div align="center">
+  <table border="0" cellspacing="0" cellpadding="0" width="100%">
+    <tr>
+      <td width="50%" align="center" valign="top">
+        <a href="https://github.com/asbryx/polymarket-lol-bot"><img src="./assets/repo-polymarket.svg" width="100%" alt="polymarket-lol-bot" /></a>
+      </td>
+      <td width="50%" align="center" valign="top">
+        <a href="https://github.com/asbryx/octra-hfhe-v2-cryptanalysis"><img src="./assets/repo-octra.svg" width="100%" alt="octra-hfhe-v2-cryptanalysis" /></a>
+      </td>
+    </tr>
+    <tr>
+      <td width="50%" align="center" valign="top">
+        <a href="https://github.com/asbryx/arc-hive"><img src="./assets/repo-archive.svg" width="100%" alt="arc-hive" /></a>
+      </td>
+      <td width="50%" align="center" valign="top">
+        <a href="https://github.com/asbryx/vencord-KeywordNotify"><img src="./assets/repo-vencord.svg" width="100%" alt="vencord-KeywordNotify" /></a>
+      </td>
+    </tr>
+  </table>
+</div>
 
 ---
 
