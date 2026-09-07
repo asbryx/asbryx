@@ -25,42 +25,42 @@
 ### Tech Stack & Tooling
 
 <div align="center">
-  <img src="https://skillicons.dev/icons?i=python,ts,js,rust,cpp,solidity,ethereum,nodejs,git,regex,selenium,linux,windows,vscode,postman&perline=8" alt="Tech Stack" />
+  <img src="https://skillicons.dev/icons?i=python,ts,js,rust,cpp,solidity,ethereum,bash,nodejs,git,regex,selenium,linux,windows,vscode,postman&perline=8" alt="Tech Stack" />
 </div>
 
 ---
 
 ### Highlighted Repositories
 
-<table>
+<table width="100%">
   <tr>
-    <td width="50%" valign="top">
+    <td width="50%" height="150" valign="top">
       <a href="https://github.com/asbryx/polymarket-lol-bot"><strong>polymarket-lol-bot</strong></a>
-      <br/>
-      <small>High-performance Rust trading engine for Polymarket LoL Esports orderbook telemetry and automated dip-buying execution.</small>
       <br/><br/>
-      <code>Rust</code> <code>Polymarket</code> <code>Async Engine</code>
+      High-performance Rust trading engine for Polymarket LoL Esports orderbook telemetry and automated dip-buying execution.
+      <br/><br/>
+      <code>Rust</code> <code>Polymarket</code> <code>Trading Bot</code>
     </td>
-    <td width="50%" valign="top">
+    <td width="50%" height="150" valign="top">
       <a href="https://github.com/asbryx/octra-hfhe-v2-cryptanalysis"><strong>octra-hfhe-v2-cryptanalysis</strong></a>
-      <br/>
-      <small>Source-first cryptanalysis pipeline of the OCTRA HFHE Challenge v2, including the live R1 LPN corpus analysis.</small>
       <br/><br/>
-      <code>Python</code> <code>C++</code> <code>Cryptography</code> <code>FHE</code>
+      Source-first cryptanalysis pipeline of OCTRA HFHE Challenge v2, including the live R1 LPN corpus reduction workflow.
+      <br/><br/>
+      <code>Python</code> <code>C++</code> <code>Cryptography</code>
     </td>
   </tr>
   <tr>
-    <td width="50%" valign="top">
+    <td width="50%" height="150" valign="top">
       <a href="https://github.com/asbryx/arc-hive"><strong>arc-hive</strong></a>
-      <br/>
-      <small>Archive and structured resource management system designed for speed, modularity, and clean query schemas.</small>
+      <br/><br/>
+      Archive and structured resource management system designed for speed, modularity, and clean query schemas.
       <br/><br/>
       <code>TypeScript</code> <code>Fullstack</code> <code>Database</code>
     </td>
-    <td width="50%" valign="top">
+    <td width="50%" height="150" valign="top">
       <a href="https://github.com/asbryx/vencord-KeywordNotify"><strong>vencord-KeywordNotify</strong></a>
-      <br/>
-      <small>Vencord client plugin providing low-overhead regex pattern matching and instant target keyword notifications.</small>
+      <br/><br/>
+      Vencord client plugin providing low-overhead regex pattern matching and instant target keyword notifications.
       <br/><br/>
       <code>TypeScript</code> <code>Discord API</code> <code>Plugin</code>
     </td>
@@ -72,7 +72,7 @@
 ### Activity & Telemetry
 
 <div align="center">
-  <table border="0" cellspacing="0" cellpadding="0">
+  <table border="0" cellspacing="0" cellpadding="0" width="100%">
     <tr>
       <td width="50%" align="center" valign="top">
         <img src="./assets/stats.svg" width="100%" alt="asbryx github stats" />
