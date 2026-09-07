@@ -22,10 +22,10 @@
 
 ---
 
-### Tech Stack & Tooling
+### Tech Stack & Core Tooling
 
 <div align="center">
-  <img src="https://skillicons.dev/icons?i=python,ts,js,rust,cpp,solidity,docker,bash,nodejs,git,regex,selenium,linux,windows,vscode,postman&perline=8" alt="Tech Stack" />
+  <img src="https://skillicons.dev/icons?i=python,ts,js,rust,cpp,solidity,git,linux" alt="Core Tech Stack" />
 </div>
 
 ---
