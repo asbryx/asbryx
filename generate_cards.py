@@ -26,10 +26,10 @@ lang_colors = {
     "Solidity": "#AA6746"
 }
 
-# --- STATS CARD (Polished Dark Glassmorphism) ---
-stats_svg = f"""<svg width="450" height="205" viewBox="0 0 450 205" fill="none" xmlns="http://www.w3.org/2000/svg">
+# --- STATS CARD (Height 215) ---
+stats_svg = f"""<svg width="450" height="215" viewBox="0 0 450 215" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="bgGrad" x1="0" y1="0" x2="450" y2="205" gradientUnits="userSpaceOnUse">
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="450" y2="215" gradientUnits="userSpaceOnUse">
       <stop stop-color="#14131d"/>
       <stop offset="1" stop-color="#1a1826"/>
     </linearGradient>
@@ -40,7 +40,7 @@ stats_svg = f"""<svg width="450" height="205" viewBox="0 0 450 205" fill="none" 
     </linearGradient>
   </defs>
 
-  <rect width="450" height="205" rx="10" fill="url(#bgGrad)" stroke="url(#borderGrad)" stroke-width="1.2"/>
+  <rect width="450" height="215" rx="10" fill="url(#bgGrad)" stroke="url(#borderGrad)" stroke-width="1.2"/>
   
   <g transform="translate(24, 28)">
     <circle cx="4" cy="4" r="3.5" fill="#eb6f92"/>
@@ -53,30 +53,29 @@ stats_svg = f"""<svg width="450" height="205" viewBox="0 0 450 205" fill="none" 
   <g transform="translate(24, 62)">
     <!-- Stars -->
     <g transform="translate(0, 0)">
-      <rect width="402" height="36" rx="6" fill="#1f1d2e" stroke="#2a273f" stroke-width="1"/>
-      <text x="14" y="23" fill="#e0def4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" font-weight="500">Total Stars Earned</text>
-      <text x="388" y="23" fill="#f6c177" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" font-weight="700" text-anchor="end">{stars}</text>
+      <rect width="402" height="38" rx="6" fill="#1f1d2e" stroke="#2a273f" stroke-width="1"/>
+      <text x="14" y="24" fill="#e0def4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" font-weight="500">Total Stars Earned</text>
+      <text x="388" y="24" fill="#f6c177" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" font-weight="700" text-anchor="end">{stars}</text>
     </g>
 
     <!-- Repos -->
-    <g transform="translate(0, 44)">
-      <rect width="402" height="36" rx="6" fill="#1f1d2e" stroke="#2a273f" stroke-width="1"/>
-      <text x="14" y="23" fill="#e0def4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" font-weight="500">Public Repositories</text>
-      <text x="388" y="23" fill="#9ccfd8" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" font-weight="700" text-anchor="end">{total_repos}</text>
+    <g transform="translate(0, 48)">
+      <rect width="402" height="38" rx="6" fill="#1f1d2e" stroke="#2a273f" stroke-width="1"/>
+      <text x="14" y="24" fill="#e0def4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" font-weight="500">Public Repositories</text>
+      <text x="388" y="24" fill="#9ccfd8" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" font-weight="700" text-anchor="end">{total_repos}</text>
     </g>
 
     <!-- Forks -->
-    <g transform="translate(0, 88)">
-      <rect width="402" height="36" rx="6" fill="#1f1d2e" stroke="#2a273f" stroke-width="1"/>
-      <text x="14" y="23" fill="#e0def4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" font-weight="500">Total Forks</text>
-      <text x="388" y="23" fill="#c4a7e7" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" font-weight="700" text-anchor="end">{forks}</text>
+    <g transform="translate(0, 96)">
+      <rect width="402" height="38" rx="6" fill="#1f1d2e" stroke="#2a273f" stroke-width="1"/>
+      <text x="14" y="24" fill="#e0def4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" font-weight="500">Total Forks</text>
+      <text x="388" y="24" fill="#c4a7e7" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" font-weight="700" text-anchor="end">{forks}</text>
     </g>
   </g>
 </svg>"""
 
-# --- LANGUAGES CARD ---
+# --- LANGUAGES CARD (List layout that fills evenly, Height 215) ---
 bars = []
-legend_items = []
 current_x = 0
 bar_width_total = 402
 
@@ -85,27 +84,25 @@ for lang, count in top_langs:
     pct = (count / total_langs) * 100
     width = (count / total_langs) * bar_width_total
     color = lang_colors.get(lang, "#9ccfd8")
-    bars.append(f'<rect x="{24 + current_x}" y="60" width="{width:.1f}" height="8" rx="3" fill="{color}"/>')
+    bars.append(f'<rect x="{24 + current_x}" y="58" width="{width:.1f}" height="6" rx="3" fill="{color}"/>')
     current_x += width
 
+list_items = []
 for i, (lang, count) in enumerate(top_langs):
     pct = (count / total_langs) * 100
     color = lang_colors.get(lang, "#9ccfd8")
-    col = i % 2
-    row = i // 2
-    lx = 24 + col * 206
-    ly = 86 + row * 46
-    legend_items.append(f"""
-    <g transform="translate({lx}, {ly})">
-      <rect width="196" height="36" rx="6" fill="#1f1d2e" stroke="#2a273f" stroke-width="1"/>
-      <circle cx="16" cy="18" r="4.5" fill="{color}"/>
-      <text x="28" y="22" fill="#e0def4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" font-weight="500">{lang}</text>
-      <text x="182" y="22" fill="#ebbcba" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" font-weight="700" text-anchor="end">{pct:.1f}%</text>
+    ly = 74 + i * 32
+    list_items.append(f"""
+    <g transform="translate(24, {ly})">
+      <rect width="402" height="26" rx="4" fill="#1f1d2e" stroke="#2a273f" stroke-width="0.8"/>
+      <circle cx="14" cy="13" r="4" fill="{color}"/>
+      <text x="28" y="17" fill="#e0def4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" font-weight="500">{lang}</text>
+      <text x="388" y="17" fill="#ebbcba" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" font-weight="700" text-anchor="end">{pct:.1f}%</text>
     </g>""")
 
-langs_svg = f"""<svg width="450" height="205" viewBox="0 0 450 205" fill="none" xmlns="http://www.w3.org/2000/svg">
+langs_svg = f"""<svg width="450" height="215" viewBox="0 0 450 215" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="bgGrad2" x1="0" y1="0" x2="450" y2="205" gradientUnits="userSpaceOnUse">
+    <linearGradient id="bgGrad2" x1="0" y1="0" x2="450" y2="215" gradientUnits="userSpaceOnUse">
       <stop stop-color="#14131d"/>
       <stop offset="1" stop-color="#1a1826"/>
     </linearGradient>
@@ -116,13 +113,13 @@ langs_svg = f"""<svg width="450" height="205" viewBox="0 0 450 205" fill="none" 
     </linearGradient>
   </defs>
 
-  <rect width="450" height="205" rx="10" fill="url(#bgGrad2)" stroke="url(#borderGrad2)" stroke-width="1.2"/>
+  <rect width="450" height="215" rx="10" fill="url(#bgGrad2)" stroke="url(#borderGrad2)" stroke-width="1.2"/>
   
   <g transform="translate(24, 28)">
     <circle cx="4" cy="4" r="3.5" fill="#eb6f92"/>
     <circle cx="16" cy="4" r="3.5" fill="#f6c177"/>
     <circle cx="28" cy="4" r="3.5" fill="#9ccfd8"/>
-    <text x="44" y="8" fill="#9ccfd8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" letter-spacing="0.1em">LANGUAGE DISTRIBUTION</text>
+    <text x="44" y="8" fill="#9ccfd8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" letter-spacing="0.1em">PRIMARY STACK</text>
   </g>
   <line x1="24" y1="46" x2="426" y2="46" stroke="#26233a" stroke-width="1"/>
 
@@ -131,7 +128,7 @@ langs_svg = f"""<svg width="450" height="205" viewBox="0 0 450 205" fill="none" 
   </g>
   
   <g>
-    {''.join(legend_items)}
+    {''.join(list_items)}
   </g>
 </svg>"""
 
@@ -142,4 +139,4 @@ with open("assets/stats.svg", "w", encoding="utf-8") as f:
 with open("assets/languages.svg", "w", encoding="utf-8") as f:
     f.write(langs_svg)
 
-print("Generated refined dark telemetry cards.")
+print("Generated perfectly balanced 215px cards.")

@@ -24,71 +24,60 @@
 
 ### Tech Stack & Tooling
 
-<table align="center" width="100%">
-  <tr>
-    <td align="center" width="25%"><strong>Languages</strong></td>
-    <td align="center" width="25%"><strong>On-Chain / Web3</strong></td>
-    <td align="center" width="25%"><strong>Automation & Reverse</strong></td>
-    <td align="center" width="25%"><strong>Environment</strong></td>
-  </tr>
-  <tr>
-    <td align="center">
-      <img src="https://skillicons.dev/icons?i=python,ts,js,rust,cpp" />
-    </td>
-    <td align="center">
-      <img src="https://skillicons.dev/icons?i=solidity,ethereum,web3" />
-    </td>
-    <td align="center">
-      <img src="https://skillicons.dev/icons?i=nodejs,git,regex,selenium" />
-    </td>
-    <td align="center">
-      <img src="https://skillicons.dev/icons?i=linux,windows,vscode,postman" />
-    </td>
-  </tr>
-</table>
+<div align="center">
+  <img src="https://skillicons.dev/icons?i=python,ts,js,rust,cpp,solidity,ethereum,nodejs,git,regex,selenium,linux,windows,vscode,postman&perline=8" alt="Tech Stack" />
+</div>
 
 ---
 
 ### Highlighted Repositories
 
-<table width="100%">
+<table>
   <tr>
     <td width="50%" valign="top">
-      <h4><a href="https://github.com/asbryx/polymarket-lol-bot">polymarket-lol-bot</a></h4>
-      <p>High-performance Rust trading engine for Polymarket LoL Esports orderbook telemetry and automated dip-buying execution.</p>
-      <code>Rust</code> • <code>Polymarket</code> • <code>Async Engine</code>
+      <a href="https://github.com/asbryx/polymarket-lol-bot"><strong>polymarket-lol-bot</strong></a>
+      <br/>
+      <small>High-performance Rust trading engine for Polymarket LoL Esports orderbook telemetry and automated dip-buying execution.</small>
+      <br/><br/>
+      <code>Rust</code> <code>Polymarket</code> <code>Async Engine</code>
     </td>
     <td width="50%" valign="top">
-      <h4><a href="https://github.com/asbryx/octra-hfhe-v2-cryptanalysis">octra-hfhe-v2-cryptanalysis</a></h4>
-      <p>Source-first cryptanalysis pipeline of the OCTRA HFHE Challenge v2, including the live R1 LPN corpus analysis.</p>
-      <code>Python</code> • <code>C++</code> • <code>Cryptography</code> • <code>FHE</code>
+      <a href="https://github.com/asbryx/octra-hfhe-v2-cryptanalysis"><strong>octra-hfhe-v2-cryptanalysis</strong></a>
+      <br/>
+      <small>Source-first cryptanalysis pipeline of the OCTRA HFHE Challenge v2, including the live R1 LPN corpus analysis.</small>
+      <br/><br/>
+      <code>Python</code> <code>C++</code> <code>Cryptography</code> <code>FHE</code>
     </td>
   </tr>
   <tr>
     <td width="50%" valign="top">
-      <h4><a href="https://github.com/asbryx/arc-hive">arc-hive</a></h4>
-      <p>Archive and structured resource management system designed for speed, modularity, and clean query schemas.</p>
-      <code>TypeScript</code> • <code>Fullstack</code> • <code>Database</code>
+      <a href="https://github.com/asbryx/arc-hive"><strong>arc-hive</strong></a>
+      <br/>
+      <small>Archive and structured resource management system designed for speed, modularity, and clean query schemas.</small>
+      <br/><br/>
+      <code>TypeScript</code> <code>Fullstack</code> <code>Database</code>
     </td>
     <td width="50%" valign="top">
-      <h4><a href="https://github.com/asbryx/vencord-KeywordNotify">vencord-KeywordNotify</a></h4>
-      <p>Vencord client plugin providing low-overhead regex pattern matching and instant target keyword notifications.</p>
-      <code>TypeScript</code> • <code>Discord API</code> • <code>Plugin</code>
+      <a href="https://github.com/asbryx/vencord-KeywordNotify"><strong>vencord-KeywordNotify</strong></a>
+      <br/>
+      <small>Vencord client plugin providing low-overhead regex pattern matching and instant target keyword notifications.</small>
+      <br/><br/>
+      <code>TypeScript</code> <code>Discord API</code> <code>Plugin</code>
     </td>
   </tr>
 </table>
 
 ---
 
-### Activity & Statistics
+### Activity & Telemetry
 
 <div align="center">
-  <table border="0">
+  <table border="0" cellspacing="0" cellpadding="0">
     <tr>
-      <td width="50%">
+      <td width="50%" align="center" valign="top">
         <img src="./assets/stats.svg" width="100%" alt="asbryx github stats" />
       </td>
-      <td width="50%">
+      <td width="50%" align="center" valign="top">
         <img src="./assets/languages.svg" width="100%" alt="Top Languages" />
       </td>
     </tr>
@@ -97,7 +86,7 @@
 
 ---
 
-### Contribution Snake
+### Contribution Activity
 
 <div align="center">
   <picture>
@@ -110,5 +99,5 @@
 <br/>
 
 <div align="center">
-  <sub>✦ <em>Crafted for <a href="https://github.com/asbryx">asbryx</a></em> ✦</sub>
+  <sub>✦ <em>Designed & Maintained by <a href="https://github.com/asbryx">asbryx</a></em> ✦</sub>
 </div>
