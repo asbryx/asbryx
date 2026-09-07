@@ -4,12 +4,17 @@
 
   <br/><br/>
 
+  <a href="https://git.io/typing-svg">
+    <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=24&duration=2800&pause=1000&color=DBACAC&center=true&vCenter=true&multiline=false&width=550&height=50&lines=Welcome+to+asbryx's+workspace;On-Chain+Engineering+%26+Automation;High-Speed+Snipers+%7C+Bot+Architect;Cryptanalysis+%26+Tooling" alt="Typing SVG" />
+  </a>
+
   <p align="center">
-    <strong>asbryx</strong> &nbsp;·&nbsp; On-Chain Engineering, High-Speed Automation & Cryptanalysis
+    <em>unregistered, but still active</em>
   </p>
 
   <p align="center">
     <a href="https://x.com/asbryx"><img src="https://img.shields.io/badge/X-@asbryx-11111b?style=flat-square&logo=x&logoColor=ebbcba" alt="X" /></a>
+    <img src="https://img.shields.io/badge/focus-On--Chain%20%7C%20Automation%20%7C%20Bots-11111b?style=flat-square&labelColor=1a1926&color=ebbcba" alt="Focus" />
     <img src="https://img.shields.io/badge/status-active-11111b?style=flat-square&color=26233a&labelColor=11111b&label=sys" alt="Status" />
   </p>
 
