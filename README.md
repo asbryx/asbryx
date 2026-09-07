@@ -79,26 +79,26 @@ const ASBRYX: Developer = Developer {
 <table width="100%">
   <tr>
     <td width="50%" valign="top">
-      <h4>🎯 <a href="https://github.com/asbryx/pixelmon-mint-racer">pixelmon-mint-racer</a></h4>
-      <p><em>Credential-free automated battle solver, voucher redemption, commit-reveal minter, and multi-wallet sweeper.</em></p>
-      <code>Python</code> • <code>Web3</code> • <code>Automation</code>
+      <h4>🏛️ <a href="https://github.com/asbryx/arc-hive">arc-hive</a></h4>
+      <p><em>Modern archive and resource management suite with scalable database schemas and intuitive interface.</em></p>
+      <code>TypeScript</code> • <code>Architecture</code> • <code>Fullstack</code>
     </td>
     <td width="50%" valign="top">
-      <h4>⚡ <a href="https://github.com/asbryx/etteum-pool">etteum-pool</a></h4>
-      <p><em>High-performance TypeScript proxy pool engine for multi-agent workflows and account routing.</em></p>
-      <code>TypeScript</code> • <code>Proxy Routing</code> • <code>Async</code>
+      <h4>🔐 <a href="https://github.com/asbryx/octra-hfhe-v2-cryptanalysis">octra-hfhe-v2-cryptanalysis</a></h4>
+      <p><em>Source-first cryptanalysis of OCTRA HFHE Challenge v2, including the live R1 LPN corpus.</em></p>
+      <code>Python</code> • <code>C++</code> • <code>Cryptography</code> • <code>FHE</code>
     </td>
   </tr>
   <tr>
     <td width="50%" valign="top">
-      <h4>🐕 <a href="https://github.com/asbryx/bufos-watchdog">bufos-watchdog</a></h4>
-      <p><em>X invite-code watchdog with wallet claim tracking, automated screenshot captures, and Telegram alerts.</em></p>
-      <code>Python</code> • <code>Telegram Bot</code> • <code>Social Scraping</code>
-    </td>
-    <td width="50%" valign="top">
       <h4>🧩 <a href="https://github.com/asbryx/vencord-KeywordNotify">vencord-KeywordNotify</a></h4>
       <p><em>Vencord third-party plugin to trigger instant notifications on custom regex pattern matches.</em></p>
       <code>TypeScript</code> • <code>Discord API</code> • <code>Plugin</code>
+    </td>
+    <td width="50%" valign="top">
+      <h4>📈 <a href="https://github.com/asbryx/polymarket-lol-bot">polymarket-lol-bot</a></h4>
+      <p><em>High-performance Rust LoL Esports dip-buying and market-making bot for Polymarket.</em></p>
+      <code>Rust</code> • <code>Polymarket</code> • <code>Trading Bot</code> • <code>Async</code>
     </td>
   </tr>
 </table>
