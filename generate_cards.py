@@ -21,50 +21,39 @@ lang_colors = {
     "TypeScript": "#3178C6",
     "JavaScript": "#F1E05A",
     "Rust": "#DEA584",
+    "C++": "#F34B7D",
     "Go": "#00ADD8",
-    "HTML": "#E34C26",
     "Solidity": "#AA6746"
 }
 
-# --- STATS CARD (Enhanced Sleek Minimalist) ---
-stats_svg = f"""<svg width="450" height="200" viewBox="0 0 450 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="cardGrad" x1="0" y1="0" x2="450" y2="200" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#191724" stop-opacity="0.95"/>
-      <stop stop-color="#1f1d2e" stop-opacity="0.95"/>
-    </linearGradient>
-    <linearGradient id="borderGrad" x1="0" y1="0" x2="450" y2="0" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#ebbcba" stop-opacity="0.4"/>
-      <stop offset="0.5" stop-color="#31748f" stop-opacity="0.2"/>
-      <stop offset="1" stop-color="#9ccfd8" stop-opacity="0.4"/>
-    </linearGradient>
-  </defs>
-
-  <rect width="450" height="200" rx="12" fill="url(#cardGrad)" stroke="url(#borderGrad)" stroke-width="1.2"/>
+# --- STATS CARD (Ultra Clean & Minimalist) ---
+stats_svg = f"""<svg width="450" height="190" viewBox="0 0 450 190" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="450" height="190" rx="8" fill="#14141d" stroke="#252434" stroke-width="1"/>
   
-  <!-- Header Title -->
-  <text x="24" y="36" fill="#ebbcba" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif" font-size="16" font-weight="700" letter-spacing="0.5">⚡ GITHUB ACTIVITY</text>
-  <line x1="24" y1="46" x2="426" y2="46" stroke="#26233a" stroke-width="1"/>
+  <text x="24" y="34" fill="#ebbcba" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" letter-spacing="0.08em">GITHUB STATS</text>
+  <line x1="24" y1="44" x2="426" y2="44" stroke="#252434" stroke-width="1"/>
 
-  <!-- Stars -->
-  <g transform="translate(24, 62)">
-    <rect width="402" height="34" rx="6" fill="#21202e" fill-opacity="0.5"/>
-    <text x="14" y="22" fill="#e0def4" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif" font-size="13" font-weight="500">⭐ Total Stars</text>
-    <text x="388" y="22" fill="#f6c177" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif" font-size="13" font-weight="700" text-anchor="end">{stars}</text>
-  </g>
+  <g transform="translate(24, 60)">
+    <!-- Stars -->
+    <g transform="translate(0, 0)">
+      <rect width="402" height="32" rx="4" fill="#1a1926"/>
+      <text x="14" y="21" fill="#908caa" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Stars Earned</text>
+      <text x="388" y="21" fill="#e0def4" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="13" font-weight="600" text-anchor="end">{stars}</text>
+    </g>
 
-  <!-- Repos -->
-  <g transform="translate(24, 102)">
-    <rect width="402" height="34" rx="6" fill="#21202e" fill-opacity="0.5"/>
-    <text x="14" y="22" fill="#e0def4" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif" font-size="13" font-weight="500">📦 Public Repositories</text>
-    <text x="388" y="22" fill="#9ccfd8" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif" font-size="13" font-weight="700" text-anchor="end">{total_repos}</text>
-  </g>
+    <!-- Repos -->
+    <g transform="translate(0, 38)">
+      <rect width="402" height="32" rx="4" fill="#1a1926"/>
+      <text x="14" y="21" fill="#908caa" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Public Repositories</text>
+      <text x="388" y="21" fill="#e0def4" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="13" font-weight="600" text-anchor="end">{total_repos}</text>
+    </g>
 
-  <!-- Forks -->
-  <g transform="translate(24, 142)">
-    <rect width="402" height="34" rx="6" fill="#21202e" fill-opacity="0.5"/>
-    <text x="14" y="22" fill="#e0def4" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif" font-size="13" font-weight="500">🔱 Total Forks</text>
-    <text x="388" y="22" fill="#c4a7e7" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif" font-size="13" font-weight="700" text-anchor="end">{forks}</text>
+    <!-- Forks -->
+    <g transform="translate(0, 76)">
+      <rect width="402" height="32" rx="4" fill="#1a1926"/>
+      <text x="14" y="21" fill="#908caa" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">Total Forks</text>
+      <text x="388" y="21" fill="#e0def4" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="13" font-weight="600" text-anchor="end">{forks}</text>
+    </g>
   </g>
 </svg>"""
 
@@ -74,54 +63,39 @@ legend_items = []
 current_x = 0
 bar_width_total = 402
 
-top_langs = lang_counts.most_common(5)
+top_langs = lang_counts.most_common(4)
 for lang, count in top_langs:
     pct = (count / total_langs) * 100
     width = (count / total_langs) * bar_width_total
-    color = lang_colors.get(lang, "#ebbcba")
-    bars.append(f'<rect x="{24 + current_x}" y="58" width="{width:.1f}" height="8" rx="4" fill="{color}"/>')
+    color = lang_colors.get(lang, "#9ccfd8")
+    bars.append(f'<rect x="{24 + current_x}" y="56" width="{width:.1f}" height="6" rx="2" fill="{color}"/>')
     current_x += width
 
 for i, (lang, count) in enumerate(top_langs):
     pct = (count / total_langs) * 100
-    color = lang_colors.get(lang, "#ebbcba")
+    color = lang_colors.get(lang, "#9ccfd8")
     col = i % 2
     row = i // 2
-    lx = 24 + col * 205
-    ly = 88 + row * 34
+    lx = 24 + col * 206
+    ly = 78 + row * 38
     legend_items.append(f"""
     <g transform="translate({lx}, {ly})">
-      <rect width="195" height="26" rx="5" fill="#21202e" fill-opacity="0.5"/>
-      <circle cx="12" cy="13" r="5" fill="{color}"/>
-      <text x="24" y="17" fill="#e0def4" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="500">{lang}</text>
-      <text x="183" y="17" fill="#9ccfd8" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="700" text-anchor="end">{pct:.1f}%</text>
+      <rect width="196" height="30" rx="4" fill="#1a1926"/>
+      <circle cx="14" cy="15" r="4" fill="{color}"/>
+      <text x="26" y="19" fill="#e0def4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">{lang}</text>
+      <text x="182" y="19" fill="#908caa" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="12" font-weight="600" text-anchor="end">{pct:.1f}%</text>
     </g>""")
 
-langs_svg = f"""<svg width="450" height="200" viewBox="0 0 450 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="cardGrad2" x1="0" y1="0" x2="450" y2="200" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#191724" stop-opacity="0.95"/>
-      <stop stop-color="#1f1d2e" stop-opacity="0.95"/>
-    </linearGradient>
-    <linearGradient id="borderGrad2" x1="0" y1="0" x2="450" y2="0" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#9ccfd8" stop-opacity="0.4"/>
-      <stop offset="0.5" stop-color="#31748f" stop-opacity="0.2"/>
-      <stop offset="1" stop-color="#ebbcba" stop-opacity="0.4"/>
-    </linearGradient>
-  </defs>
-
-  <rect width="450" height="200" rx="12" fill="url(#cardGrad2)" stroke="url(#borderGrad2)" stroke-width="1.2"/>
+langs_svg = f"""<svg width="450" height="190" viewBox="0 0 450 190" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="450" height="190" rx="8" fill="#14141d" stroke="#252434" stroke-width="1"/>
   
-  <!-- Header Title -->
-  <text x="24" y="36" fill="#9ccfd8" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif" font-size="16" font-weight="700" letter-spacing="0.5">🛠 TOP LANGUAGES</text>
-  <line x1="24" y1="46" x2="426" y2="46" stroke="#26233a" stroke-width="1"/>
+  <text x="24" y="34" fill="#ebbcba" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" letter-spacing="0.08em">TOP LANGUAGES</text>
+  <line x1="24" y1="44" x2="426" y2="44" stroke="#252434" stroke-width="1"/>
 
-  <!-- Bar -->
   <g>
     {''.join(bars)}
   </g>
   
-  <!-- Grid items -->
   <g>
     {''.join(legend_items)}
   </g>
@@ -134,4 +108,4 @@ with open("assets/stats.svg", "w", encoding="utf-8") as f:
 with open("assets/languages.svg", "w", encoding="utf-8") as f:
     f.write(langs_svg)
 
-print("Updated assets/stats.svg and assets/languages.svg")
+print("Updated minimalist stats.svg and languages.svg")
