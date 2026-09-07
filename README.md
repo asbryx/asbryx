@@ -43,6 +43,7 @@ philosophy: "Execute clean, move fast, automate everything."
   <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js" />
   <img src="https://img.shields.io/badge/Web3.js-F16822?style=for-the-badge&logo=web3dotjs&logoColor=white" alt="Web3.js" />
   <img src="https://img.shields.io/badge/Ethers.js-2A5AD7?style=for-the-badge&logo=ethereum&logoColor=white" alt="Ethers.js" />
+  <img src="https://img.shields.io/badge/Rust-DEA584?style=for-the-badge&logo=rust&logoColor=black" alt="Rust" />
   <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git" />
   <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" alt="Linux" />
 </p>
@@ -55,10 +56,10 @@ philosophy: "Execute clean, move fast, automate everything."
   <table border="0">
     <tr>
       <td width="50%">
-        <img src="https://github-readme-stats.vercel.app/api?username=asbryx&show_icons=true&theme=rose_pine&hide_border=true&bg_color=191724" width="100%" alt="asbryx github stats" />
+        <img src="./assets/stats.svg" width="100%" alt="asbryx github stats" />
       </td>
       <td width="50%">
-        <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=asbryx&layout=compact&theme=rose_pine&hide_border=true&bg_color=191724" width="100%" alt="Top Languages" />
+        <img src="./assets/languages.svg" width="100%" alt="Top Languages" />
       </td>
     </tr>
     <tr>
