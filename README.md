@@ -31,26 +31,26 @@
   <table border="0" cellspacing="0" cellpadding="0" width="100%">
     <tr>
       <td width="50%" align="center" valign="top">
-        <a href="https://github.com/asbryx/universal-cuda-miner"><img src="./assets/repo-cuda.svg" width="100%" alt="universal-cuda-miner" /></a>
+        <a href="https://github.com/asbryx/universal-cuda-miner"><img src="./assets/repo-cuda.svg?v=2" width="100%" alt="universal-cuda-miner" /></a>
       </td>
       <td width="50%" align="center" valign="top">
-        <a href="https://github.com/asbryx/polymarket-lol-bot"><img src="./assets/repo-polymarket.svg" width="100%" alt="polymarket-lol-bot" /></a>
-      </td>
-    </tr>
-    <tr>
-      <td width="50%" align="center" valign="top">
-        <a href="https://github.com/asbryx/octra-hfhe-v2-cryptanalysis"><img src="./assets/repo-octra.svg" width="100%" alt="octra-hfhe-v2-cryptanalysis" /></a>
-      </td>
-      <td width="50%" align="center" valign="top">
-        <a href="https://github.com/asbryx/pixelmon-mint-racer"><img src="./assets/repo-pixelmon.svg" width="100%" alt="pixelmon-mint-racer" /></a>
+        <a href="https://github.com/asbryx/polymarket-lol-bot"><img src="./assets/repo-polymarket.svg?v=2" width="100%" alt="polymarket-lol-bot" /></a>
       </td>
     </tr>
     <tr>
       <td width="50%" align="center" valign="top">
-        <a href="https://github.com/asbryx/gocollect-farm"><img src="./assets/repo-gocollect.svg" width="100%" alt="gocollect-farm" /></a>
+        <a href="https://github.com/asbryx/octra-hfhe-v2-cryptanalysis"><img src="./assets/repo-octra.svg?v=2" width="100%" alt="octra-hfhe-v2-cryptanalysis" /></a>
       </td>
       <td width="50%" align="center" valign="top">
-        <a href="https://github.com/asbryx/notion2api"><img src="./assets/repo-notion2api.svg" width="100%" alt="notion2api" /></a>
+        <a href="https://github.com/asbryx/pixelmon-mint-racer"><img src="./assets/repo-pixelmon.svg?v=2" width="100%" alt="pixelmon-mint-racer" /></a>
+      </td>
+    </tr>
+    <tr>
+      <td width="50%" align="center" valign="top">
+        <a href="https://github.com/asbryx/gocollect-farm"><img src="./assets/repo-gocollect.svg?v=2" width="100%" alt="gocollect-farm" /></a>
+      </td>
+      <td width="50%" align="center" valign="top">
+        <a href="https://github.com/asbryx/notion2api"><img src="./assets/repo-notion2api.svg?v=2" width="100%" alt="notion2api" /></a>
       </td>
     </tr>
   </table>
