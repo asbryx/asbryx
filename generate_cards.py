@@ -68,63 +68,68 @@ lang_colors = {
 
 # 1. OVERVIEW STATS CARD (442x168) - Quiet, minimalist typographic index
 stats_svg = f"""<svg width="442" height="168" viewBox="0 0 442 168" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect x="0.5" y="0.5" width="441" height="167" rx="6" fill="#121318" fill-opacity="0.65" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1"/>
+  <rect x="0.5" y="0.5" width="441" height="167" rx="6" fill="#13151b" fill-opacity="0.8" stroke="#ffffff" stroke-opacity="0.1" stroke-width="1"/>
 
   <g transform="translate(24, 28)">
-    <text x="0" y="10" fill="#7c778c" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, sans-serif" font-size="10.5" font-weight="500" letter-spacing="0.1em">COMMITS</text>
-    <text x="0" y="42" fill="#f2eff6" font-family="Georgia, 'Times New Roman', serif" font-size="26" font-weight="400">{total_commits:,}</text>
+    <text x="0" y="10" fill="#a29db0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, sans-serif" font-size="10.5" font-weight="500" letter-spacing="0.1em">COMMITS</text>
+    <text x="0" y="42" fill="#f5f3f7" font-family="Georgia, 'Times New Roman', serif" font-size="26" font-weight="400">{total_commits:,}</text>
   </g>
 
   <g transform="translate(234, 28)">
-    <text x="0" y="10" fill="#7c778c" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, sans-serif" font-size="10.5" font-weight="500" letter-spacing="0.1em">PULL REQUESTS</text>
-    <text x="0" y="42" fill="#f2eff6" font-family="Georgia, 'Times New Roman', serif" font-size="26" font-weight="400">{total_prs}</text>
+    <text x="0" y="10" fill="#a29db0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, sans-serif" font-size="10.5" font-weight="500" letter-spacing="0.1em">PULL REQUESTS</text>
+    <text x="0" y="42" fill="#f5f3f7" font-family="Georgia, 'Times New Roman', serif" font-size="26" font-weight="400">{total_prs}</text>
   </g>
 
-  <line x1="24" y1="88" x2="418" y2="88" stroke="#ffffff" stroke-opacity="0.06" stroke-width="1"/>
+  <line x1="24" y1="88" x2="418" y2="88" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1"/>
 
   <g transform="translate(24, 106)">
-    <text x="0" y="10" fill="#7c778c" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, sans-serif" font-size="10.5" font-weight="500" letter-spacing="0.1em">PUBLIC REPOSITORIES</text>
-    <text x="0" y="40" fill="#f2eff6" font-family="Georgia, 'Times New Roman', serif" font-size="24" font-weight="400">{total_repos}</text>
+    <text x="0" y="10" fill="#a29db0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, sans-serif" font-size="10.5" font-weight="500" letter-spacing="0.1em">PUBLIC REPOSITORIES</text>
+    <text x="0" y="40" fill="#f5f3f7" font-family="Georgia, 'Times New Roman', serif" font-size="24" font-weight="400">{total_repos}</text>
   </g>
 
   <g transform="translate(234, 106)">
-    <text x="0" y="10" fill="#7c778c" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, sans-serif" font-size="10.5" font-weight="500" letter-spacing="0.1em">STARS &amp; FORKS</text>
-    <text x="0" y="40" fill="#f2eff6" font-family="Georgia, 'Times New Roman', serif" font-size="24" font-weight="400">{stars} <tspan fill="#565266" font-size="18">/</tspan> {forks}</text>
+    <text x="0" y="10" fill="#a29db0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, sans-serif" font-size="10.5" font-weight="500" letter-spacing="0.1em">STARS &amp; FORKS</text>
+    <text x="0" y="40" fill="#f5f3f7" font-family="Georgia, 'Times New Roman', serif" font-size="24" font-weight="400">{stars} <tspan fill="#726d82" font-size="18">/</tspan> {forks}</text>
   </g>
 </svg>"""
 
 
-# 2. LANGUAGES CARD (442x168) - Thin 4px bar + clean 2-column legend
-top_langs = lang_counts.most_common(4)
-top_total = sum(c for _, c in top_langs) or 1
+# 2. LANGUAGES CARD (442x168) - Thin 4px bar + exact 100% 4-slot breakdown (Top 3 + Rust/CUDA)
+top3 = lang_counts.most_common(3)
+top3_sum = sum(c for _, c in top3)
+other_count = max(0, total_langs - top3_sum)
+display_langs = list(top3)
+if other_count > 0:
+    display_langs.append(("Rust · CUDA", other_count))
+lang_colors["Rust · CUDA"] = "#a89cc8"
 
 bars = []
 current_x = 0
 bar_width_total = 394
 
-for lang, count in top_langs:
-    width = (count / top_total) * bar_width_total
+for lang, count in display_langs:
+    width = (count / total_langs) * bar_width_total
     color = lang_colors.get(lang, "#9bb3c4")
     bars.append(f'<rect x="{24 + current_x:.1f}" y="46" width="{max(width - 3, 2):.1f}" height="4" rx="2" fill="{color}"/>')
     current_x += width
 
 legend_items = []
 positions = [(24, 80), (234, 80), (24, 122), (234, 122)]
-for i, (lang, count) in enumerate(top_langs):
+for i, (lang, count) in enumerate(display_langs[:4]):
     pct = (count / total_langs) * 100
     color = lang_colors.get(lang, "#9bb3c4")
     px, py = positions[i]
     legend_items.append(f"""
     <g transform="translate({px}, {py})">
       <circle cx="4" cy="6" r="3.5" fill="{color}"/>
-      <text x="16" y="10" fill="#e4e0ec" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, sans-serif" font-size="13" font-weight="500">{lang}</text>
-      <text x="184" y="10" fill="#7c778c" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, monospace" font-size="12" text-anchor="end">{pct:.1f}%</text>
+      <text x="16" y="10" fill="#ece9f2" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, sans-serif" font-size="13" font-weight="500">{lang}</text>
+      <text x="184" y="10" fill="#a29db0" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, monospace" font-size="12" text-anchor="end">{pct:.1f}%</text>
     </g>""")
 
 langs_svg = f"""<svg width="442" height="168" viewBox="0 0 442 168" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect x="0.5" y="0.5" width="441" height="167" rx="6" fill="#121318" fill-opacity="0.65" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1"/>
+  <rect x="0.5" y="0.5" width="441" height="167" rx="6" fill="#13151b" fill-opacity="0.8" stroke="#ffffff" stroke-opacity="0.1" stroke-width="1"/>
 
-  <text x="24" y="30" fill="#7c778c" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, sans-serif" font-size="10.5" font-weight="500" letter-spacing="0.1em">PRIMARY LANGUAGES</text>
+  <text x="24" y="30" fill="#a29db0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, sans-serif" font-size="10.5" font-weight="500" letter-spacing="0.1em">LANGUAGE DISTRIBUTION</text>
 
   <g>
     {''.join(bars)}
