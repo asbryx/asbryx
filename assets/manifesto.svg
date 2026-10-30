@@ -1,47 +1,75 @@
-<svg width="900" height="130" viewBox="0 0 900 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="900" height="195" viewBox="0 0 900 195" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="mBg" x1="0" y1="0" x2="900" y2="130" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#111019"/>
-      <stop offset="100%" stop-color="#171522"/>
+    <linearGradient id="mBg" x1="0" y1="0" x2="900" y2="195" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#08070c"/>
+      <stop offset="50%" stop-color="#110e18"/>
+      <stop offset="100%" stop-color="#08070c"/>
     </linearGradient>
-    <linearGradient id="mBorder" x1="0" y1="0" x2="900" y2="130" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#9ccfd8" stop-opacity="0.55"/>
-      <stop offset="50%" stop-color="#26233a" stop-opacity="0.4"/>
-      <stop offset="100%" stop-color="#ebbcba" stop-opacity="0.55"/>
-    </linearGradient>
+    <pattern id="dotMatrix" width="16" height="16" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="0.7" fill="#ebbcba" fill-opacity="0.12"/>
+    </pattern>
   </defs>
 
-  <rect width="900" height="130" rx="10" fill="url(#mBg)"/>
-  <rect x="0.75" y="0.75" width="898.5" height="128.5" rx="9.25" stroke="url(#mBorder)" stroke-width="1.3"/>
+  <rect width="900" height="195" rx="4" fill="url(#mBg)" stroke="#26233a" stroke-width="1.2"/>
+  <rect width="900" height="195" rx="4" fill="url(#dotMatrix)"/>
 
-  <!-- 3 Operational Pillars -->
-  <!-- Pillar 1 -->
-  <g transform="translate(22, 18)">
-    <rect width="274" height="94" rx="7" fill="#191724" stroke="#26233a" stroke-width="1"/>
-    <path d="M 0 16 L 3 16 L 3 38 L 0 38 Z" fill="#ebbcba"/>
-    <text x="16" y="24" fill="#ebbcba" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10.5" font-weight="700" letter-spacing="0.12em">01 // MEV &amp; ON-CHAIN RACING</text>
-    <text x="16" y="46" fill="#e0def4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11.5">Direct contract calldata execution, multi-RPC</text>
-    <text x="16" y="63" fill="#908caa" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11.5">racing, commit-reveal snipers &amp; fleet sweepers.</text>
-    <text x="16" y="82" fill="#6e6a86" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9.5">EVM · SOLANA · SEADROP · STATIC_GAS</text>
+  <!-- Top Section Bar -->
+  <rect x="1" y="1" width="898" height="26" fill="#0d0b14"/>
+  <line x1="1" y1="27" x2="899" y2="27" stroke="#26233a" stroke-width="1"/>
+  <text x="16" y="18" fill="#ebbcba" font-family="'Courier New', Courier, monospace" font-size="10.5" font-weight="700" letter-spacing="0.2em">✟ SYSTEM_SCHEMATICS // EXECUTION_TRIAD</text>
+  <text x="884" y="18" fill="#6e6a86" font-family="'Courier New', Courier, monospace" font-size="10" font-weight="700" text-anchor="end" letter-spacing="0.1em">[RING_0 :: UNRESTRICTED]</text>
+
+  <!-- BLADE I: ON-CHAIN WARFARE -->
+  <g transform="translate(16, 40)">
+    <rect width="278" height="140" fill="#0b0a10" stroke="#ebbcba" stroke-width="0.9" stroke-opacity="0.55"/>
+    <rect width="278" height="22" fill="#181422"/>
+    <text x="10" y="15" fill="#ebbcba" font-family="'Courier New', Courier, monospace" font-size="10.5" font-weight="700">I. ON-CHAIN CALLDATA WARFARE</text>
+    <text x="268" y="15" fill="#6e6a86" font-family="'Courier New', Courier, monospace" font-size="9.5" text-anchor="end">EVM//SOL</text>
+
+    <!-- Hex / Assembly Dump -->
+    <text x="12" y="42" fill="#908caa" font-family="'Courier New', Courier, monospace" font-size="10">&gt; target: <tspan fill="#e0def4">SeaDrop_v1 / CommitReveal</tspan></text>
+    <text x="12" y="58" fill="#908caa" font-family="'Courier New', Courier, monospace" font-size="10">&gt; selector: <tspan fill="#ebbcba">0x6a627842</tspan> (raw_tx)</text>
+    <text x="12" y="74" fill="#908caa" font-family="'Courier New', Courier, monospace" font-size="10">&gt; gas_policy: <tspan fill="#f6c177">STATIC_LIMIT // NO_EST</tspan></text>
+    <text x="12" y="90" fill="#908caa" font-family="'Courier New', Courier, monospace" font-size="10">&gt; broadcast: <tspan fill="#9ccfd8">MULTI_RPC_FANOUT (N=12)</tspan></text>
+
+    <line x1="12" y1="104" x2="266" y2="104" stroke="#26233a" stroke-width="1" stroke-dasharray="2 2"/>
+    <text x="12" y="120" fill="#c4c0dc" font-family="'Courier New', Courier, monospace" font-size="9.5">Zero-UI direct contract snipers,</text>
+    <text x="12" y="132" fill="#6e6a86" font-family="'Courier New', Courier, monospace" font-size="9.5">merkle proof builders &amp; fleet sweepers.</text>
   </g>
 
-  <!-- Pillar 2 -->
-  <g transform="translate(313, 18)">
-    <rect width="274" height="94" rx="7" fill="#191724" stroke="#26233a" stroke-width="1"/>
-    <path d="M 0 16 L 3 16 L 3 38 L 0 38 Z" fill="#9ccfd8"/>
-    <text x="16" y="24" fill="#9ccfd8" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10.5" font-weight="700" letter-spacing="0.12em">02 // CUDA POW &amp; CRYPTANALYSIS</text>
-    <text x="16" y="46" fill="#e0def4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11.5">Custom GPU kernels for Keccak/SHA-256 PoW</text>
-    <text x="16" y="63" fill="#908caa" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11.5">mining, lattice reduction &amp; HFHE/LPN attacks.</text>
-    <text x="16" y="82" fill="#6e6a86" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9.5">CUDA · PTX · C++ · LOCAL_SIGNING</text>
+  <!-- BLADE II: GPU SILICON & CRYPTANALYSIS -->
+  <g transform="translate(311, 40)">
+    <rect width="278" height="140" fill="#0b0a10" stroke="#9ccfd8" stroke-width="0.9" stroke-opacity="0.55"/>
+    <rect width="278" height="22" fill="#131924"/>
+    <text x="10" y="15" fill="#9ccfd8" font-family="'Courier New', Courier, monospace" font-size="10.5" font-weight="700">II. CUDA SILICON &amp; CRYPTANALYSIS</text>
+    <text x="268" y="15" fill="#6e6a86" font-family="'Courier New', Courier, monospace" font-size="9.5" text-anchor="end">PTX//C++</text>
+
+    <!-- PTX / Cryptanalysis Dump -->
+    <text x="12" y="42" fill="#908caa" font-family="'Courier New', Courier, monospace" font-size="10">&gt; kernel: <tspan fill="#e0def4">keccak256_sha256_unroll</tspan></text>
+    <text x="12" y="58" fill="#908caa" font-family="'Courier New', Courier, monospace" font-size="10">&gt; arch: <tspan fill="#9ccfd8">sm_86 / sm_89 warp_sieve</tspan></text>
+    <text x="12" y="74" fill="#908caa" font-family="'Courier New', Courier, monospace" font-size="10">&gt; attack: <tspan fill="#c4a7e7">OCTRA_HFHE_v2 R1_LPN</tspan></text>
+    <text x="12" y="90" fill="#908caa" font-family="'Courier New', Courier, monospace" font-size="10">&gt; signer: <tspan fill="#f6c177">AIRGAPPED_LOCAL_SECP256K1</tspan></text>
+
+    <line x1="12" y1="104" x2="266" y2="104" stroke="#26233a" stroke-width="1" stroke-dasharray="2 2"/>
+    <text x="12" y="120" fill="#c4c0dc" font-family="'Courier New', Courier, monospace" font-size="9.5">Custom PoW mining rigs, lattice/LPN</text>
+    <text x="12" y="132" fill="#6e6a86" font-family="'Courier New', Courier, monospace" font-size="9.5">corpus reduction &amp; verifiable solvers.</text>
   </g>
 
-  <!-- Pillar 3 -->
-  <g transform="translate(604, 18)">
-    <rect width="274" height="94" rx="7" fill="#191724" stroke="#26233a" stroke-width="1"/>
-    <path d="M 0 16 L 3 16 L 3 38 L 0 38 Z" fill="#f6c177"/>
-    <text x="16" y="24" fill="#f6c177" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10.5" font-weight="700" letter-spacing="0.12em">03 // STEALTH &amp; CLOB SYSTEMS</text>
-    <text x="16" y="46" fill="#e0def4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11.5">Orderbook tick collectors, synthetic telemetry</text>
-    <text x="16" y="63" fill="#908caa" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11.5">kinematics &amp; anti-detect protocol clients.</text>
-    <text x="16" y="82" fill="#6e6a86" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9.5">RUST · TYPESCRIPT · TLS_FINGERPRINT</text>
+  <!-- BLADE III: CLOB HFT & PHANTOM TELEMETRY -->
+  <g transform="translate(606, 40)">
+    <rect width="278" height="140" fill="#0b0a10" stroke="#f6c177" stroke-width="0.9" stroke-opacity="0.55"/>
+    <rect width="278" height="22" fill="#1f1918"/>
+    <text x="10" y="15" fill="#f6c177" font-family="'Courier New', Courier, monospace" font-size="10.5" font-weight="700">III. CLOB HFT &amp; STEALTH KINEMATICS</text>
+    <text x="268" y="15" fill="#6e6a86" font-family="'Courier New', Courier, monospace" font-size="9.5" text-anchor="end">RUST//TS</text>
+
+    <!-- Orderbook / Telemetry Dump -->
+    <text x="12" y="42" fill="#908caa" font-family="'Courier New', Courier, monospace" font-size="10">&gt; feed: <tspan fill="#e0def4">Polymarket_CLOB L2_WS</tspan></text>
+    <text x="12" y="58" fill="#908caa" font-family="'Courier New', Courier, monospace" font-size="10">&gt; trigger: <tspan fill="#eb6f92">ESPORTS_DIP_DELTA &lt; -18%</tspan></text>
+    <text x="12" y="74" fill="#908caa" font-family="'Courier New', Courier, monospace" font-size="10">&gt; spoof: <tspan fill="#f6c177">GPS_GAIT + IMU_GYRO_NOISE</tspan></text>
+    <text x="12" y="90" fill="#908caa" font-family="'Courier New', Courier, monospace" font-size="10">&gt; tls: <tspan fill="#9ccfd8">JA3/JA4_CLOAK_TRANSPORT</tspan></text>
+
+    <line x1="12" y1="104" x2="266" y2="104" stroke="#26233a" stroke-width="1" stroke-dasharray="2 2"/>
+    <text x="12" y="120" fill="#c4c0dc" font-family="'Courier New', Courier, monospace" font-size="9.5">Sub-millisecond orderbook snipers &amp;</text>
+    <text x="12" y="132" fill="#6e6a86" font-family="'Courier New', Courier, monospace" font-size="9.5">biometric/device-motion synthesis.</text>
   </g>
 </svg>

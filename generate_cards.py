@@ -20,9 +20,8 @@ stars = sum(r.get("stargazers_count", 0) for r in repos)
 forks = sum(r.get("forks_count", 0) for r in repos)
 languages = [r.get("language") for r in repos if r.get("language")]
 lang_counts = Counter(languages)
-total_langs = sum(lang_counts.values())
+total_langs = sum(lang_counts.values()) or 1
 
-# Default fallback metrics if GraphQL isn't available
 total_commits = 933
 total_prs = 137
 
@@ -67,175 +66,170 @@ lang_colors = {
     "Solidity": "#e0def4"
 }
 
-# --- STATS CARD (450x245) ---
-stats_svg = f"""<svg width="450" height="245" viewBox="0 0 450 245" fill="none" xmlns="http://www.w3.org/2000/svg">
+# ==============================================================================
+# 1. STATS CARD: CRT OSCILLOSCOPE & SACRAMENTAL TELEMETRY (450x265)
+# ==============================================================================
+stats_svg = f"""<svg width="450" height="265" viewBox="0 0 450 265" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="bgGrad" x1="0" y1="0" x2="450" y2="245" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#111019"/>
-      <stop offset="50%" stop-color="#161421"/>
-      <stop offset="100%" stop-color="#1c192b"/>
+    <linearGradient id="sBg" x1="0" y1="0" x2="450" y2="265" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#07060a"/>
+      <stop offset="50%" stop-color="#110e18"/>
+      <stop offset="100%" stop-color="#07060a"/>
     </linearGradient>
-    <linearGradient id="borderGrad" x1="0" y1="0" x2="450" y2="245" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#ebbcba" stop-opacity="0.75"/>
-      <stop offset="50%" stop-color="#2a273f" stop-opacity="0.4"/>
-      <stop offset="100%" stop-color="#9ccfd8" stop-opacity="0.75"/>
+    <linearGradient id="waveGrad" x1="20" y1="0" x2="430" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#ebbcba" stop-opacity="0.1"/>
+      <stop offset="30%" stop-color="#ebbcba" stop-opacity="0.9"/>
+      <stop offset="70%" stop-color="#9ccfd8" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#9ccfd8" stop-opacity="0.1"/>
     </linearGradient>
-    <linearGradient id="headerGlow" x1="24" y1="48" x2="426" y2="48" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#ebbcba" stop-opacity="0.6"/>
-      <stop offset="50%" stop-color="#9ccfd8" stop-opacity="0.25"/>
-      <stop offset="100%" stop-color="#26233a" stop-opacity="0.0"/>
-    </linearGradient>
-    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
-      <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#ffffff" stroke-width="0.5" stroke-opacity="0.02"/>
+    <pattern id="crtGrid" width="18" height="18" patternUnits="userSpaceOnUse">
+      <path d="M 18 0 L 0 0 0 18" fill="none" stroke="#ebbcba" stroke-width="0.4" stroke-opacity="0.06"/>
     </pattern>
   </defs>
 
-  <rect width="450" height="245" rx="12" fill="url(#bgGrad)"/>
-  <rect width="450" height="245" rx="12" fill="url(#grid)"/>
-  <rect x="0.75" y="0.75" width="448.5" height="243.5" rx="11.25" stroke="url(#borderGrad)" stroke-width="1.5"/>
+  <style>
+    @keyframes pulseDot {{
+      0%, 100% {{ opacity: 1; }}
+      50% {{ opacity: 0.25; }}
+    }}
+    .live-dot {{ animation: pulseDot 1.6s infinite; }}
+  </style>
 
-  <!-- Cyber-sigilism corner accents -->
-  <path d="M 12 24 L 12 12 L 24 12" stroke="#ebbcba" stroke-width="1.2" stroke-opacity="0.5" fill="none"/>
-  <path d="M 438 24 L 438 12 L 426 12" stroke="#9ccfd8" stroke-width="1.2" stroke-opacity="0.5" fill="none"/>
-  <path d="M 12 221 L 12 233 L 24 233" stroke="#9ccfd8" stroke-width="1.2" stroke-opacity="0.5" fill="none"/>
-  <path d="M 438 221 L 438 233 L 426 233" stroke="#ebbcba" stroke-width="1.2" stroke-opacity="0.5" fill="none"/>
+  <!-- Outer Frame -->
+  <rect width="450" height="265" rx="3" fill="url(#sBg)" stroke="#26233a" stroke-width="1.2"/>
+  <rect width="450" height="265" rx="3" fill="url(#crtGrid)"/>
+  <rect x="4" y="4" width="442" height="257" rx="1" fill="none" stroke="#ebbcba" stroke-width="0.5" stroke-opacity="0.22"/>
 
-  <!-- Header -->
-  <g transform="translate(24, 24)">
-    <text x="0" y="10" fill="#ebbcba" font-family="ui-monospace, SFMono-Regular, 'Fira Code', Menlo, Consolas, monospace" font-size="12" font-weight="700" letter-spacing="0.16em">✟ SYSTEM TELEMETRY // NODE_01</text>
-    <rect x="336" y="-3" width="66" height="18" rx="4" fill="#1f1d2e" stroke="#ebbcba" stroke-width="0.8" stroke-opacity="0.5"/>
-    <circle cx="347" cy="6" r="3" fill="#9ccfd8"/>
-    <text x="355" y="10" fill="#e0def4" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9.5" font-weight="700" letter-spacing="0.08em">ONLINE</text>
+  <!-- Top Bar -->
+  <rect x="1" y="1" width="448" height="26" fill="#0d0b14"/>
+  <line x1="1" y1="27" x2="449" y2="27" stroke="#26233a" stroke-width="1"/>
+  <circle cx="16" cy="14" r="3" fill="#eb6f92" class="live-dot"/>
+  <text x="26" y="18" fill="#ebbcba" font-family="'Courier New', Courier, monospace" font-size="10.5" font-weight="700" letter-spacing="0.15em">† TELEMETRY_READOUT // PID_01</text>
+  <text x="434" y="18" fill="#9ccfd8" font-family="'Courier New', Courier, monospace" font-size="9.5" font-weight="700" text-anchor="end">[SYNCED]</text>
+
+  <!-- Oscilloscope Heartbeat Monitor Strip -->
+  <g transform="translate(18, 38)">
+    <rect width="414" height="44" fill="#09070d" stroke="#26233a" stroke-width="0.9"/>
+    <line x1="0" y1="22" x2="414" y2="22" stroke="#26233a" stroke-width="0.6" stroke-dasharray="3 3"/>
+    <!-- ECG / Heartbeat Waveform -->
+    <polyline points="6,22 55,22 68,22 75,10 82,34 89,4 96,39 103,16 110,22 175,22 185,14 192,30 199,22 260,22 268,9 275,35 282,5 289,38 296,17 303,22 365,22 375,15 382,29 389,22 408,22" stroke="url(#waveGrad)" stroke-width="1.5" fill="none"/>
+    <text x="8" y="12" fill="#6e6a86" font-family="'Courier New', Courier, monospace" font-size="8.5">SIGNAL: MEMPOOL_HEARTBEAT</text>
+    <text x="406" y="12" fill="#ebbcba" font-family="'Courier New', Courier, monospace" font-size="8.5" text-anchor="end">FREQ: 1000Hz // LOCKED</text>
   </g>
-  <line x1="24" y1="48" x2="426" y2="48" stroke="url(#headerGlow)" stroke-width="1.2"/>
 
-  <!-- 2x2 Bento Telemetry Grid -->
-  <g transform="translate(24, 62)">
-    <!-- Box 1: Commits & Contributions -->
+  <!-- 4 Register Readout Rows -->
+  <g transform="translate(18, 94)">
+    <!-- Row 1: Total Commits -->
     <g transform="translate(0, 0)">
-      <rect width="194" height="72" rx="8" fill="#191724" fill-opacity="0.85" stroke="#26233a" stroke-width="1.2"/>
-      <path d="M 0 18 L 3 18 L 3 34 L 0 34 Z" fill="#ebbcba"/>
-      <text x="16" y="24" fill="#908caa" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10" font-weight="600" letter-spacing="0.08em">TOTAL COMMITS</text>
-      <text x="16" y="52" fill="#e0def4" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="22" font-weight="700">{total_commits}</text>
-      <text x="178" y="50" fill="#ebbcba" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10" font-weight="600" text-anchor="end">✦ HEAD</text>
+      <rect width="414" height="30" fill="#0d0b14" stroke="#26233a" stroke-width="0.8"/>
+      <rect x="0" y="0" width="3" height="30" fill="#ebbcba"/>
+      <text x="12" y="19" fill="#908caa" font-family="'Courier New', Courier, monospace" font-size="10.5" font-weight="700">0x01 // TOTAL_COMMITS_PUSHED</text>
+      <text x="275" y="19" fill="#393552" font-family="'Courier New', Courier, monospace" font-size="10">........</text>
+      <text x="402" y="19" fill="#ffffff" font-family="'Courier New', Courier, monospace" font-size="13.5" font-weight="700" text-anchor="end">{total_commits}</text>
     </g>
 
-    <!-- Box 2: Merged PRs -->
-    <g transform="translate(208, 0)">
-      <rect width="194" height="72" rx="8" fill="#191724" fill-opacity="0.85" stroke="#26233a" stroke-width="1.2"/>
-      <path d="M 0 18 L 3 18 L 3 34 L 0 34 Z" fill="#9ccfd8"/>
-      <text x="16" y="24" fill="#908caa" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10" font-weight="600" letter-spacing="0.08em">PULL REQUESTS</text>
-      <text x="16" y="52" fill="#e0def4" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="22" font-weight="700">{total_prs}</text>
-      <text x="178" y="50" fill="#9ccfd8" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10" font-weight="600" text-anchor="end">MERGED</text>
+    <!-- Row 2: Pull Requests -->
+    <g transform="translate(0, 36)">
+      <rect width="414" height="30" fill="#0d0b14" stroke="#26233a" stroke-width="0.8"/>
+      <rect x="0" y="0" width="3" height="30" fill="#9ccfd8"/>
+      <text x="12" y="19" fill="#908caa" font-family="'Courier New', Courier, monospace" font-size="10.5" font-weight="700">0x02 // MERGED_PULL_REQUESTS</text>
+      <text x="275" y="19" fill="#393552" font-family="'Courier New', Courier, monospace" font-size="10">........</text>
+      <text x="402" y="19" fill="#9ccfd8" font-family="'Courier New', Courier, monospace" font-size="13.5" font-weight="700" text-anchor="end">{total_prs}</text>
     </g>
 
-    <!-- Box 3: Public Repositories -->
-    <g transform="translate(0, 84)">
-      <rect width="194" height="72" rx="8" fill="#191724" fill-opacity="0.85" stroke="#26233a" stroke-width="1.2"/>
-      <path d="M 0 18 L 3 18 L 3 34 L 0 34 Z" fill="#c4a7e7"/>
-      <text x="16" y="24" fill="#908caa" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10" font-weight="600" letter-spacing="0.08em">PUBLIC REPOS</text>
-      <text x="16" y="52" fill="#e0def4" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="22" font-weight="700">{total_repos}</text>
-      <text x="178" y="50" fill="#c4a7e7" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10" font-weight="600" text-anchor="end">INDEXED</text>
+    <!-- Row 3: Public Artifacts -->
+    <g transform="translate(0, 72)">
+      <rect width="414" height="30" fill="#0d0b14" stroke="#26233a" stroke-width="0.8"/>
+      <rect x="0" y="0" width="3" height="30" fill="#c4a7e7"/>
+      <text x="12" y="19" fill="#908caa" font-family="'Courier New', Courier, monospace" font-size="10.5" font-weight="700">0x03 // PUBLIC_REPOSITORIES</text>
+      <text x="275" y="19" fill="#393552" font-family="'Courier New', Courier, monospace" font-size="10">........</text>
+      <text x="402" y="19" fill="#c4a7e7" font-family="'Courier New', Courier, monospace" font-size="13.5" font-weight="700" text-anchor="end">{total_repos}</text>
     </g>
 
-    <!-- Box 4: Stars & Forks -->
-    <g transform="translate(208, 84)">
-      <rect width="194" height="72" rx="8" fill="#191724" fill-opacity="0.85" stroke="#26233a" stroke-width="1.2"/>
-      <path d="M 0 18 L 3 18 L 3 34 L 0 34 Z" fill="#f6c177"/>
-      <text x="16" y="24" fill="#908caa" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10" font-weight="600" letter-spacing="0.08em">STARS // FORKS</text>
-      <text x="16" y="52" fill="#e0def4" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="22" font-weight="700">{stars} <tspan fill="#6e6a86" font-size="16">/</tspan> {forks}</text>
-      <text x="178" y="50" fill="#f6c177" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10" font-weight="600" text-anchor="end">★ NET</text>
+    <!-- Row 4: Stars & Forks -->
+    <g transform="translate(0, 108)">
+      <rect width="414" height="30" fill="#0d0b14" stroke="#26233a" stroke-width="0.8"/>
+      <rect x="0" y="0" width="3" height="30" fill="#f6c177"/>
+      <text x="12" y="19" fill="#908caa" font-family="'Courier New', Courier, monospace" font-size="10.5" font-weight="700">0x04 // STARS_&amp;_FORKS_EARNED</text>
+      <text x="275" y="19" fill="#393552" font-family="'Courier New', Courier, monospace" font-size="10">........</text>
+      <text x="402" y="19" fill="#f6c177" font-family="'Courier New', Courier, monospace" font-size="13.5" font-weight="700" text-anchor="end">{stars}★ / {forks}⑂</text>
     </g>
   </g>
 
   <!-- Footer -->
-  <text x="24" y="230" fill="#6e6a86" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9.5" letter-spacing="0.1em">HEBREWS 1:11 // ENCRYPTED_RUNTIME</text>
-  <text x="426" y="230" fill="#908caa" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9.5" text-anchor="end" letter-spacing="0.08em">[✓ NOT_A_ROBOT]</text>
+  <text x="18" y="250" fill="#6e6a86" font-family="'Courier New', Courier, monospace" font-size="9" font-weight="700">CANON: HEBREWS 1:11 // RELIQUARY_ACTIVE</text>
+  <text x="432" y="250" fill="#ebbcba" font-family="'Courier New', Courier, monospace" font-size="9" font-weight="700" text-anchor="end">[✓ I'M NOT A ROBOT]</text>
 </svg>"""
 
-# --- LANGUAGES CARD (450x245) ---
-bars = []
-current_x = 0
-bar_width_total = 402
 
+# ==============================================================================
+# 2. LANGUAGES CARD: SPECTRUM KERNEL ALLOCATION (450x265)
+# ==============================================================================
 top_langs = lang_counts.most_common(5)
 top_total = sum(c for _, c in top_langs) or 1
+
+bars = []
+current_x = 0
+bar_width_total = 414
 
 for lang, count in top_langs:
     width = (count / top_total) * bar_width_total
     color = lang_colors.get(lang, "#9ccfd8")
-    bars.append(f'<rect x="{24 + current_x:.1f}" y="62" width="{max(width - 2, 2):.1f}" height="8" rx="3" fill="{color}"/>')
+    bars.append(f'<rect x="{18 + current_x:.1f}" y="42" width="{max(width - 2, 2):.1f}" height="10" fill="{color}"/>')
     current_x += width
 
 list_items = []
 for i, (lang, count) in enumerate(top_langs):
     pct = (count / total_langs) * 100
     color = lang_colors.get(lang, "#9ccfd8")
-    ly = 82 + i * 27
-    bar_w = int((pct / 100) * 110)
+    ly = 66 + i * 34
+    blocks = max(1, int(round((pct / 100) * 16)))
+    ascii_bar = "█" * blocks + "░" * (16 - blocks)
     list_items.append(f"""
-    <g transform="translate(24, {ly})">
-      <rect width="402" height="23" rx="5" fill="#191724" fill-opacity="0.85" stroke="#26233a" stroke-width="0.9"/>
-      <circle cx="14" cy="11.5" r="3.5" fill="{color}"/>
-      <text x="26" y="15.5" fill="#e0def4" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11.5" font-weight="600">{lang}</text>
-      <rect x="210" y="8.5" width="110" height="6" rx="3" fill="#111019"/>
-      <rect x="210" y="8.5" width="{max(bar_w, 4)}" height="6" rx="3" fill="{color}" fill-opacity="0.85"/>
-      <text x="388" y="15.5" fill="{color}" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" font-weight="700" text-anchor="end">{pct:.1f}%</text>
+    <g transform="translate(18, {ly})">
+      <rect width="414" height="28" fill="#0d0b14" stroke="#26233a" stroke-width="0.8"/>
+      <rect x="0" y="0" width="3" height="28" fill="{color}"/>
+      <text x="12" y="18" fill="#ffffff" font-family="'Courier New', Courier, monospace" font-size="11" font-weight="700">{lang.upper()}</text>
+      <text x="155" y="18" fill="{color}" font-family="'Courier New', Courier, monospace" font-size="10.5" letter-spacing="0.05em">{ascii_bar}</text>
+      <text x="402" y="18" fill="{color}" font-family="'Courier New', Courier, monospace" font-size="11.5" font-weight="700" text-anchor="end">{pct:.1f}%</text>
     </g>""")
 
-langs_svg = f"""<svg width="450" height="245" viewBox="0 0 450 245" fill="none" xmlns="http://www.w3.org/2000/svg">
+langs_svg = f"""<svg width="450" height="265" viewBox="0 0 450 265" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="bgGrad2" x1="0" y1="0" x2="450" y2="245" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#111019"/>
-      <stop offset="50%" stop-color="#161421"/>
-      <stop offset="100%" stop-color="#1c192b"/>
+    <linearGradient id="lBg" x1="0" y1="0" x2="450" y2="265" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#07060a"/>
+      <stop offset="50%" stop-color="#110e18"/>
+      <stop offset="100%" stop-color="#07060a"/>
     </linearGradient>
-    <linearGradient id="borderGrad2" x1="0" y1="0" x2="450" y2="245" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#9ccfd8" stop-opacity="0.75"/>
-      <stop offset="50%" stop-color="#2a273f" stop-opacity="0.4"/>
-      <stop offset="100%" stop-color="#ebbcba" stop-opacity="0.75"/>
-    </linearGradient>
-    <linearGradient id="headerGlow2" x1="24" y1="48" x2="426" y2="48" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#9ccfd8" stop-opacity="0.6"/>
-      <stop offset="50%" stop-color="#ebbcba" stop-opacity="0.25"/>
-      <stop offset="100%" stop-color="#26233a" stop-opacity="0.0"/>
-    </linearGradient>
-    <pattern id="grid2" width="24" height="24" patternUnits="userSpaceOnUse">
-      <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#ffffff" stroke-width="0.5" stroke-opacity="0.02"/>
+    <pattern id="crtGrid2" width="18" height="18" patternUnits="userSpaceOnUse">
+      <path d="M 18 0 L 0 0 0 18" fill="none" stroke="#9ccfd8" stroke-width="0.4" stroke-opacity="0.06"/>
     </pattern>
   </defs>
 
-  <rect width="450" height="245" rx="12" fill="url(#bgGrad2)"/>
-  <rect width="450" height="245" rx="12" fill="url(#grid2)"/>
-  <rect x="0.75" y="0.75" width="448.5" height="243.5" rx="11.25" stroke="url(#borderGrad2)" stroke-width="1.5"/>
+  <!-- Outer Frame -->
+  <rect width="450" height="265" rx="3" fill="url(#lBg)" stroke="#26233a" stroke-width="1.2"/>
+  <rect width="450" height="265" rx="3" fill="url(#crtGrid2)"/>
+  <rect x="4" y="4" width="442" height="257" rx="1" fill="none" stroke="#9ccfd8" stroke-width="0.5" stroke-opacity="0.22"/>
 
-  <!-- Cyber-sigilism corner accents -->
-  <path d="M 12 24 L 12 12 L 24 12" stroke="#9ccfd8" stroke-width="1.2" stroke-opacity="0.5" fill="none"/>
-  <path d="M 438 24 L 438 12 L 426 12" stroke="#ebbcba" stroke-width="1.2" stroke-opacity="0.5" fill="none"/>
-  <path d="M 12 221 L 12 233 L 24 233" stroke="#ebbcba" stroke-width="1.2" stroke-opacity="0.5" fill="none"/>
-  <path d="M 438 221 L 438 233 L 426 233" stroke="#9ccfd8" stroke-width="1.2" stroke-opacity="0.5" fill="none"/>
+  <!-- Top Bar -->
+  <rect x="1" y="1" width="448" height="26" fill="#0d0b14"/>
+  <line x1="1" y1="27" x2="449" y2="27" stroke="#26233a" stroke-width="1"/>
+  <text x="16" y="18" fill="#9ccfd8" font-family="'Courier New', Courier, monospace" font-size="10.5" font-weight="700" letter-spacing="0.15em">† KERNEL_DISTRIBUTION // LANG_ALLOC</text>
+  <text x="434" y="18" fill="#ebbcba" font-family="'Courier New', Courier, monospace" font-size="9.5" font-weight="700" text-anchor="end">[5_STACKS]</text>
 
-  <!-- Header -->
-  <g transform="translate(24, 24)">
-    <text x="0" y="10" fill="#9ccfd8" font-family="ui-monospace, SFMono-Regular, 'Fira Code', Menlo, Consolas, monospace" font-size="12" font-weight="700" letter-spacing="0.16em">✟ LANGUAGE MATRIX // KERNEL</text>
-    <rect x="332" y="-3" width="70" height="18" rx="4" fill="#1f1d2e" stroke="#9ccfd8" stroke-width="0.8" stroke-opacity="0.5"/>
-    <text x="367" y="10" fill="#ebbcba" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9.5" font-weight="700" text-anchor="middle" letter-spacing="0.06em">5 STACKS</text>
-  </g>
-  <line x1="24" y1="48" x2="426" y2="48" stroke="url(#headerGlow2)" stroke-width="1.2"/>
-
-  <!-- Distribution Bar -->
+  <!-- Segmented Spectrum Bar -->
   <g>
     {''.join(bars)}
   </g>
 
-  <!-- Stack Rows -->
+  <!-- ASCII Block Language Rows -->
   <g>
     {''.join(list_items)}
   </g>
 
   <!-- Footer -->
-  <text x="24" y="232" fill="#6e6a86" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9.5" letter-spacing="0.1em">COMPILED_DISTRIBUTION</text>
-  <text x="426" y="232" fill="#908caa" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9.5" text-anchor="end" letter-spacing="0.08em">EVM // CUDA // RUST</text>
+  <text x="18" y="250" fill="#6e6a86" font-family="'Courier New', Courier, monospace" font-size="9" font-weight="700">ARCH: x86_64 // SM_89_PTX // EVM_BYTECODE</text>
+  <text x="432" y="250" fill="#9ccfd8" font-family="'Courier New', Courier, monospace" font-size="9" font-weight="700" text-anchor="end">VERIFIED_BUILD</text>
 </svg>"""
 
 os.makedirs("assets", exist_ok=True)
@@ -245,4 +239,4 @@ with open("assets/stats.svg", "w", encoding="utf-8") as f:
 with open("assets/languages.svg", "w", encoding="utf-8") as f:
     f.write(langs_svg)
 
-print("Generated cyber-angelcore 245px telemetry & language cards.")
+print("Generated CRT oscilloscope telemetry & ASCII block language spectrum cards.")
