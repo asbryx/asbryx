@@ -1,0 +1,45 @@
+<svg width="900" height="115" viewBox="0 0 900 115" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="qBg" x1="0" y1="0" x2="900" y2="115" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#111019"/>
+      <stop offset="50%" stop-color="#181524"/>
+      <stop offset="100%" stop-color="#111019"/>
+    </linearGradient>
+    <linearGradient id="qBorder" x1="0" y1="0" x2="900" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#ebbcba" stop-opacity="0.7"/>
+      <stop offset="25%" stop-color="#9ccfd8" stop-opacity="0.35"/>
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.85"/>
+      <stop offset="75%" stop-color="#9ccfd8" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#ebbcba" stop-opacity="0.7"/>
+    </linearGradient>
+    <linearGradient id="lineGrad" x1="150" y1="0" x2="750" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#ebbcba" stop-opacity="0.0"/>
+      <stop offset="25%" stop-color="#ebbcba" stop-opacity="0.5"/>
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.8"/>
+      <stop offset="75%" stop-color="#9ccfd8" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#9ccfd8" stop-opacity="0.0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="900" height="115" rx="10" fill="url(#qBg)"/>
+  <rect x="0.75" y="0.75" width="898.5" height="113.5" rx="9.25" stroke="url(#qBorder)" stroke-width="1.4"/>
+
+  <!-- Cyber-sigilism ornamental corners -->
+  <path d="M 14 28 L 14 12 L 34 12" stroke="#ebbcba" stroke-width="1.3" stroke-opacity="0.7" fill="none"/>
+  <path d="M 886 28 L 886 12 L 866 12" stroke="#9ccfd8" stroke-width="1.3" stroke-opacity="0.7" fill="none"/>
+  <path d="M 14 87 L 14 103 L 34 103" stroke="#9ccfd8" stroke-width="1.3" stroke-opacity="0.7" fill="none"/>
+  <path d="M 886 87 L 886 103 L 866 103" stroke="#ebbcba" stroke-width="1.3" stroke-opacity="0.7" fill="none"/>
+
+  <!-- Top micro header -->
+  <text x="450" y="26" fill="#908caa" font-family="ui-monospace, SFMono-Regular, 'Fira Code', Menlo, monospace" font-size="10" font-weight="600" text-anchor="middle" letter-spacing="0.28em">✦ SANCTUM // AXIOM_00 ✦</text>
+
+  <!-- Main Quote -->
+  <text x="450" y="61" fill="#ffffff" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-style="italic" font-weight="400" text-anchor="middle" letter-spacing="0.03em">“people who have seen hell often appreciate heaven the most”</text>
+
+  <!-- Ornamental divider -->
+  <line x1="150" y1="80" x2="750" y2="80" stroke="url(#lineGrad)" stroke-width="1"/>
+  <text x="450" y="84" fill="#ebbcba" font-family="ui-monospace, SFMono-Regular, monospace" font-size="11" text-anchor="middle">✟</text>
+
+  <!-- Sub-caption -->
+  <text x="450" y="101" fill="#9ccfd8" font-family="ui-monospace, SFMono-Regular, 'Fira Code', Menlo, monospace" font-size="10" font-weight="600" text-anchor="middle" letter-spacing="0.18em">ON-CHAIN EXECUTION  ·  ADVERSARIAL SYSTEMS  ·  HIGH-SPEED AUTOMATION</text>
+</svg>

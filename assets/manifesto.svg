@@ -1,0 +1,47 @@
+<svg width="900" height="130" viewBox="0 0 900 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="mBg" x1="0" y1="0" x2="900" y2="130" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#111019"/>
+      <stop offset="100%" stop-color="#171522"/>
+    </linearGradient>
+    <linearGradient id="mBorder" x1="0" y1="0" x2="900" y2="130" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#9ccfd8" stop-opacity="0.55"/>
+      <stop offset="50%" stop-color="#26233a" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#ebbcba" stop-opacity="0.55"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="900" height="130" rx="10" fill="url(#mBg)"/>
+  <rect x="0.75" y="0.75" width="898.5" height="128.5" rx="9.25" stroke="url(#mBorder)" stroke-width="1.3"/>
+
+  <!-- 3 Operational Pillars -->
+  <!-- Pillar 1 -->
+  <g transform="translate(22, 18)">
+    <rect width="274" height="94" rx="7" fill="#191724" stroke="#26233a" stroke-width="1"/>
+    <path d="M 0 16 L 3 16 L 3 38 L 0 38 Z" fill="#ebbcba"/>
+    <text x="16" y="24" fill="#ebbcba" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10.5" font-weight="700" letter-spacing="0.12em">01 // MEV &amp; ON-CHAIN RACING</text>
+    <text x="16" y="46" fill="#e0def4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11.5">Direct contract calldata execution, multi-RPC</text>
+    <text x="16" y="63" fill="#908caa" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11.5">racing, commit-reveal snipers &amp; fleet sweepers.</text>
+    <text x="16" y="82" fill="#6e6a86" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9.5">EVM · SOLANA · SEADROP · STATIC_GAS</text>
+  </g>
+
+  <!-- Pillar 2 -->
+  <g transform="translate(313, 18)">
+    <rect width="274" height="94" rx="7" fill="#191724" stroke="#26233a" stroke-width="1"/>
+    <path d="M 0 16 L 3 16 L 3 38 L 0 38 Z" fill="#9ccfd8"/>
+    <text x="16" y="24" fill="#9ccfd8" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10.5" font-weight="700" letter-spacing="0.12em">02 // CUDA POW &amp; CRYPTANALYSIS</text>
+    <text x="16" y="46" fill="#e0def4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11.5">Custom GPU kernels for Keccak/SHA-256 PoW</text>
+    <text x="16" y="63" fill="#908caa" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11.5">mining, lattice reduction &amp; HFHE/LPN attacks.</text>
+    <text x="16" y="82" fill="#6e6a86" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9.5">CUDA · PTX · C++ · LOCAL_SIGNING</text>
+  </g>
+
+  <!-- Pillar 3 -->
+  <g transform="translate(604, 18)">
+    <rect width="274" height="94" rx="7" fill="#191724" stroke="#26233a" stroke-width="1"/>
+    <path d="M 0 16 L 3 16 L 3 38 L 0 38 Z" fill="#f6c177"/>
+    <text x="16" y="24" fill="#f6c177" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10.5" font-weight="700" letter-spacing="0.12em">03 // STEALTH &amp; CLOB SYSTEMS</text>
+    <text x="16" y="46" fill="#e0def4" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11.5">Orderbook tick collectors, synthetic telemetry</text>
+    <text x="16" y="63" fill="#908caa" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11.5">kinematics &amp; anti-detect protocol clients.</text>
+    <text x="16" y="82" fill="#6e6a86" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="9.5">RUST · TYPESCRIPT · TLS_FINGERPRINT</text>
+  </g>
+</svg>
