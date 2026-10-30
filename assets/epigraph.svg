@@ -1,0 +1,16 @@
+<svg width="900" height="120" viewBox="0 0 900 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="ruleGrad" x1="260" y1="0" x2="640" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#d4b5bc" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#d4b5bc" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#d4b5bc" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <text x="450" y="44" fill="#f2eff6" font-family="Georgia, 'Times New Roman', Times, serif" font-size="22" font-style="italic" font-weight="400" text-anchor="middle" letter-spacing="0.02em">“people who have seen hell often appreciate heaven the most”</text>
+
+  <line x1="260" y1="70" x2="640" y2="70" stroke="url(#ruleGrad)" stroke-width="1"/>
+  <circle cx="450" cy="70" r="1.8" fill="#d4b5bc" fill-opacity="0.7"/>
+
+  <text x="450" y="98" fill="#8b8698" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="11" font-weight="500" text-anchor="middle" letter-spacing="0.24em">ON-CHAIN EXECUTION   ·   APPLIED CRYPTANALYSIS   ·   LOW-LATENCY SYSTEMS</text>
+</svg>
