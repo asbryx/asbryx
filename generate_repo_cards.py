@@ -281,7 +281,7 @@ cards = [
         "title": "universal-cuda-miner",
         "cmd": "nvcc -O3 -arch=sm_89 kernel.cu --sign-local",
         "desc1": "Sanitized CUDA proof-of-work mining toolkit with",
-        "desc2": "custom GPU kernels, local signing & offline tests.",
+        "desc2": "custom GPU kernels, local signing &amp; offline tests.",
         "tags": ["CUDA_PTX", "PYTHON", "KECCAK_POW", "LOCAL_SIGN"],
         "accent": "#ebbcba",
         "watermark": """
@@ -334,7 +334,7 @@ cards = [
         "title": "pixelmon-mint-racer",
         "cmd": "python3 racer.py --commit-reveal --sweep-all",
         "desc1": "Credential-free automated battle solver, voucher",
-        "desc2": "redeemer, commit-reveal minter & multi-wallet sweeper.",
+        "desc2": "redeemer, commit-reveal minter &amp; multi-wallet sweeper.",
         "tags": ["EVM_SNIPER", "COMMIT_REVEAL", "SWEEPER", "RPC"],
         "accent": "#c4a7e7",
         "watermark": """
@@ -353,7 +353,7 @@ cards = [
         "title": "gocollect-farm",
         "cmd": "node farmer.js --gait-sim --imu-noise --siwx",
         "desc1": "Human-like crate farmer for gocollect.fun via direct",
-        "desc2": "API: GPS gait simulator, IMU telemetry & SIWx auth.",
+        "desc2": "API: GPS gait simulator, IMU telemetry &amp; SIWx auth.",
         "tags": ["JAVASCRIPT", "GPS_KINEMATICS", "SIWX", "SOLANA"],
         "accent": "#eb6f92",
         "watermark": """
@@ -370,7 +370,7 @@ cards = [
         "title": "notion2api",
         "cmd": "uvicorn main:app --port 8080 --stream-thinking",
         "desc1": "Convert Notion AI into an OpenAI-compatible API",
-        "desc2": "with Vision, Thinking traces, Web Search & Web UI.",
+        "desc2": "with Vision, Thinking traces, Web Search &amp; Web UI.",
         "tags": ["OPENAI_PROXY", "STREAM_SSE", "REVERSE_ENG", "PYTHON"],
         "accent": "#9ccfd8",
         "watermark": """
