@@ -276,7 +276,7 @@ with open("assets/manifesto.svg", "w", encoding="utf-8") as f:
 # ==============================================================================
 cards = [
     {
-        "filename": "repo-cuda.svg",
+        "filename": "arcana-cuda.svg",
         "arcana": "ARCANA I // SILICON_FORGE",
         "title": "universal-cuda-miner",
         "cmd": "nvcc -O3 -arch=sm_89 kernel.cu --sign-local",
@@ -295,7 +295,7 @@ cards = [
         """
     },
     {
-        "filename": "repo-polymarket.svg",
+        "filename": "arcana-polymarket.svg",
         "arcana": "ARCANA II // ORDERBOOK_ORACLE",
         "title": "polymarket-lol-bot",
         "cmd": "cargo run --release -- --clob-ws --dip-sniper",
@@ -312,7 +312,7 @@ cards = [
         """
     },
     {
-        "filename": "repo-octra.svg",
+        "filename": "arcana-octra.svg",
         "arcana": "ARCANA III // CIPHER_BREAKER",
         "title": "octra-hfhe-v2-cryptanalysis",
         "cmd": "python3 solve_lpn.py --corpus R1 --lattice-bkz",
@@ -329,7 +329,7 @@ cards = [
         """
     },
     {
-        "filename": "repo-pixelmon.svg",
+        "filename": "arcana-pixelmon.svg",
         "arcana": "ARCANA IV // MEMPOOL_REAPER",
         "title": "pixelmon-mint-racer",
         "cmd": "python3 racer.py --commit-reveal --sweep-all",
@@ -348,7 +348,7 @@ cards = [
         """
     },
     {
-        "filename": "repo-gocollect.svg",
+        "filename": "arcana-gocollect.svg",
         "arcana": "ARCANA V // PHANTOM_WALKER",
         "title": "gocollect-farm",
         "cmd": "node farmer.js --gait-sim --imu-noise --siwx",
@@ -365,7 +365,7 @@ cards = [
         """
     },
     {
-        "filename": "repo-notion2api.svg",
+        "filename": "arcana-notion2api.svg",
         "arcana": "ARCANA VI // NEURAL_CONDUIT",
         "title": "notion2api",
         "cmd": "uvicorn main:app --port 8080 --stream-thinking",
