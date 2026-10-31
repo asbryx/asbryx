@@ -1,31 +1,40 @@
 <svg width="442" height="168" viewBox="0 0 442 168" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    @keyframes segBreathe {
+      0%, 100% { fill-opacity: 0.7; }
+      50% { fill-opacity: 1; }
+    }
+    .seg0 { animation: segBreathe 7s ease-in-out infinite; animation-delay: 0.0s; }.seg1 { animation: segBreathe 7s ease-in-out infinite; animation-delay: 1.6s; }.seg2 { animation: segBreathe 7s ease-in-out infinite; animation-delay: 3.2s; }.seg3 { animation: segBreathe 7s ease-in-out infinite; animation-delay: 4.800000000000001s; }
+    .leg0 { animation: segBreathe 7s ease-in-out infinite; animation-delay: 0.0s; }.leg1 { animation: segBreathe 7s ease-in-out infinite; animation-delay: 1.6s; }.leg2 { animation: segBreathe 7s ease-in-out infinite; animation-delay: 3.2s; }.leg3 { animation: segBreathe 7s ease-in-out infinite; animation-delay: 4.800000000000001s; }
+  </style>
+
   <rect x="0.5" y="0.5" width="441" height="167" rx="6" fill="#13151b" fill-opacity="0.8" stroke="#ffffff" stroke-opacity="0.1" stroke-width="1"/>
 
   <text x="24" y="30" fill="#a29db0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, sans-serif" font-size="10.5" font-weight="500" letter-spacing="0.1em">LANGUAGE DISTRIBUTION</text>
 
   <g>
-    <rect x="24.0" y="46" width="194.0" height="4" rx="2" fill="#d4b5bc"/><rect x="221.0" y="46" width="84.6" height="4" rx="2" fill="#c4b49a"/><rect x="308.6" y="46" width="62.7" height="4" rx="2" fill="#9bb3c4"/><rect x="374.2" y="46" width="40.8" height="4" rx="2" fill="#a89cc8"/>
+    <rect x="24.0" y="46" width="194.0" height="4" rx="2" fill="#d4b5bc" fill-opacity="0.92" class="seg0"/><rect x="221.0" y="46" width="84.6" height="4" rx="2" fill="#c4b49a" fill-opacity="0.92" class="seg1"/><rect x="308.6" y="46" width="62.7" height="4" rx="2" fill="#9bb3c4" fill-opacity="0.92" class="seg2"/><rect x="374.2" y="46" width="40.8" height="4" rx="2" fill="#a89cc8" fill-opacity="0.92" class="seg3"/>
   </g>
 
   <g>
     
     <g transform="translate(24, 80)">
-      <circle cx="4" cy="6" r="3.5" fill="#d4b5bc"/>
+      <circle cx="4" cy="6" r="3.5" fill="#d4b5bc" class="leg0"/>
       <text x="16" y="10" fill="#ece9f2" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, sans-serif" font-size="13" font-weight="500">Python</text>
       <text x="184" y="10" fill="#a29db0" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, monospace" font-size="12" text-anchor="end">50.0%</text>
     </g>
     <g transform="translate(234, 80)">
-      <circle cx="4" cy="6" r="3.5" fill="#c4b49a"/>
+      <circle cx="4" cy="6" r="3.5" fill="#c4b49a" class="leg1"/>
       <text x="16" y="10" fill="#ece9f2" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, sans-serif" font-size="13" font-weight="500">JavaScript</text>
       <text x="184" y="10" fill="#a29db0" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, monospace" font-size="12" text-anchor="end">22.2%</text>
     </g>
     <g transform="translate(24, 122)">
-      <circle cx="4" cy="6" r="3.5" fill="#9bb3c4"/>
+      <circle cx="4" cy="6" r="3.5" fill="#9bb3c4" class="leg2"/>
       <text x="16" y="10" fill="#ece9f2" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, sans-serif" font-size="13" font-weight="500">TypeScript</text>
       <text x="184" y="10" fill="#a29db0" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, monospace" font-size="12" text-anchor="end">16.7%</text>
     </g>
     <g transform="translate(234, 122)">
-      <circle cx="4" cy="6" r="3.5" fill="#a89cc8"/>
+      <circle cx="4" cy="6" r="3.5" fill="#a89cc8" class="leg3"/>
       <text x="16" y="10" fill="#ece9f2" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, sans-serif" font-size="13" font-weight="500">Rust · CUDA</text>
       <text x="184" y="10" fill="#a29db0" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, monospace" font-size="12" text-anchor="end">11.1%</text>
     </g>

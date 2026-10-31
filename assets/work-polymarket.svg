@@ -1,13 +1,45 @@
 <svg width="442" height="124" viewBox="0 0 442 124" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="shBlur" x="-20%" y="-10%" width="140%" height="120%">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+  </defs>
+
+  <style>
+    @keyframes dashFlow {
+      to { stroke-dashoffset: -96; }
+    }
+    .flow { animation: dashFlow 11s linear infinite; }
+
+    @keyframes shimmerX {
+      0%, 26% { transform: translateX(-170px); }
+      64%, 100% { transform: translateX(620px); }
+    }
+    .shimmer { animation: shimmerX 10s linear infinite; }
+  </style>
+
   <rect x="0.5" y="0.5" width="441" height="123" rx="6" fill="#13151b" fill-opacity="0.8" stroke="#ffffff" stroke-opacity="0.1" stroke-width="1"/>
 
+  <rect x="1" y="0.5" width="440" height="1" fill="#c4b49a" fill-opacity="0.3"/>
+
+  
+  <g stroke="#c4b49a" stroke-opacity="0.13" fill="none">
+    <polyline class="flow" points="322,80 344,68 360,86 378,42 396,72 412,52 428,64" stroke-width="1.4" stroke-dasharray="5 7"/>
+    <line x1="322" y1="90" x2="428" y2="90" stroke-width="0.5" stroke-dasharray="2 4" stroke-opacity="0.6"/>
+  </g>
+
+
+  <g class="shimmer">
+    <rect x="-60" y="-10" width="90" height="144" fill="#ffffff" fill-opacity="0.04" filter="url(#shBlur)" transform="skewX(-18)"/>
+  </g>
+
   <text x="22" y="32" fill="#f5f3f7" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="14.5" font-weight="600" letter-spacing="-0.01em">polymarket-lol-bot</text>
-  <text x="420" y="32" fill="#9a95a8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13.5" text-anchor="end">↗</text>
+  <text x="420" y="32" fill="#9a95a8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13.5" text-anchor="end">&#8599;</text>
 
   <text x="22" y="58" fill="#b4afc2" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="400">Low-latency orderbook engine for Polymarket esports</text>
   <text x="22" y="76" fill="#b4afc2" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Helvetica, Arial, sans-serif" font-size="12.5" font-weight="400">telemetry and automated dip-buying execution.</text>
 
-  <circle cx="26" cy="102" r="3" fill="#e2c2c8" fill-opacity="0.9"/>
+  <circle cx="26" cy="102" r="3" fill="#c4b49a" fill-opacity="0.9"/>
   <text x="36" y="106" fill="#a29db0" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace" font-size="11" font-weight="500">Rust</text>
   <text x="420" y="106" fill="#827d92" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, sans-serif" font-size="11" font-weight="500" text-anchor="end">Orderbook HFT</text>
 </svg>
